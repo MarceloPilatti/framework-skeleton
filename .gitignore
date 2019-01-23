@@ -2,7 +2,6 @@ nbproject
 ._*
 .~lock.*
 /vendor/
-vendor/
 .settings/
 *~
 *.bak
