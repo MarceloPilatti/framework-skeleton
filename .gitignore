@@ -1,0 +1,13 @@
+nbproject
+._*
+.~lock.*
+/vendor/
+vendor/
+.settings/
+*~
+*.bak
+composer.phar
+*.mo
+*.bak
+.ideia
+.ideia/
