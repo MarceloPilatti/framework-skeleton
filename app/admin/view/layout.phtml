@@ -1,0 +1,34 @@
+<?php $version=$this->version; ?>
+<?php $min=$this->min; ?>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css?v=<?php echo $version?>" />
+    <link rel="stylesheet" type="text/css" href="/css/style<?php echo $min?>.css?v=<?php echo $version?>" />
+
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js?v=<?php echo $version?>"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js?v=<?php echo $version?>"></script>
+    <script type="text/javascript" src="/js/jquery.inputmask.bundle.min.js?v=<?php echo $version?>"></script>
+    <script type="text/javascript" src="/js/script<?php echo $min?>.js?v=<?php echo $version?>"></script>
+</head>
+<body>
+<?php echo $this->flashMessages; ?>
+<div id="flashAjax" class="alert flash flash-bottom-right"></div>
+<?php $this->content();?>
+<div id="back-to-top" class="position-fixed" style="bottom: 50px; right: 25px; display: none"><a href="#" data-tooltip="true" title="Retornar ao Topo da Página." class="btn btn-primary"> <span class="fas fa-arrow-up"></span></a></div>
+<?php include __DIR__ . '/partials/modals.phtml';?>
+<div id="sidebar" class="sidebar modal left fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="d-block p-3 bg-light border-bottom">
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

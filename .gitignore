@@ -9,5 +9,4 @@ vendor/
 composer.phar
 *.mo
 *.bak
-.ideia
 .ideia/

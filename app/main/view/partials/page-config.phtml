@@ -1,0 +1,43 @@
+<?php
+$pageConfigId='';
+$pageConfigUrl=parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
+$pageConfig=$this->pageConfig;
+$title='';
+$description='';
+$robots='';
+if($pageConfig){
+    $title=$pageConfig->title;
+    $description=$pageConfig->description;
+    $robots=$pageConfig->robots;
+    $page=$pageConfig->page;
+    $pageConfigId=$pageConfig->id;
+    $pageConfigUrl=$pageConfig->url;
+}
+$title=(($this->inputTitle)??($title));
+$description=((html_entity_decode($this->inputDescription))??(html_entity_decode($description)));
+$url=(($this->inputUrl)??($pageConfigUrl));
+$robots=(($this->inputRobots)??($robots));
+?>
+<input name='page' type="hidden" value="<?php echo $page ?>" />
+<input name='pageConfigId' type="hidden" value="<?php echo $pageConfigId?>" />
+<input name='pageConfigUrl' type="hidden" value="<?php echo $pageConfigUrl ?>" />
+<div class="form-group">
+    <label>Título da página</label>
+    <input type="text" name="title" class="form-control <?php (($title)?(print "border-danger"):(''))?>" value="<?php echo $title?>" />
+    <?php echo $this->errorTitle ?>
+</div>
+<div class="form-group">
+    <label>Descrição da página</label>
+    <textarea name="description" rows="5" class="form-control"><?php echo $description ?></textarea>
+    <?php echo $this->errorDescription ?>
+</div>
+<div class="form-group">
+    <label>Url</label>
+    <textarea name="url" rows="5" class="form-control"><?php echo $url ?></textarea>
+    <?php echo $this->errorUrl?>
+</div>
+<div class="form-group">
+    <label>Robots</label>
+    <textarea name="robots" rows="5" class="form-control"><?php echo $robots ?></textarea>
+    <?php echo $this->errorRobots ?>
+</div>
